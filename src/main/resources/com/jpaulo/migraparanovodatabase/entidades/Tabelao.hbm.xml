@@ -1,0 +1,234 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 04/05/2017 14:58:00 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.jpaulo.migraparanovodatabase.entidades.Tabelao" table="TABELAO" catalog="taco" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="categoriasCodigoDaCategoria" type="java.lang.Integer">
+            <column name="CATEGORIAS_CodigoDaCategoria" />
+        </property>
+        <property name="nomeDaCategoria" type="string">
+            <column name="NomeDaCategoria" length="30" />
+        </property>
+        <property name="descricao" type="string">
+            <column name="Descricao" />
+        </property>
+        <property name="clientesCodigoDoCliente" type="string">
+            <column name="Clientes_CodigoDoCliente" length="10" />
+        </property>
+        <property name="clientesNomeDaEmpresa" type="string">
+            <column name="Clientes_NomeDaEmpresa" length="80" />
+        </property>
+        <property name="clientesNomeDoContato" type="string">
+            <column name="Clientes_NomeDoContato" length="60" />
+        </property>
+        <property name="clientesCargoDoContato" type="string">
+            <column name="Clientes_CargoDoContato" length="60" />
+        </property>
+        <property name="clientesEndereco" type="string">
+            <column name="Clientes_Endereco" length="120" />
+        </property>
+        <property name="clientesCidade" type="string">
+            <column name="Clientes_Cidade" length="30" />
+        </property>
+        <property name="clientesRegiao" type="string">
+            <column name="Clientes_Regiao" length="30" />
+        </property>
+        <property name="clientesCep" type="string">
+            <column name="Clientes_CEP" length="20" />
+        </property>
+        <property name="clientesPais" type="string">
+            <column name="Clientes_Pais" length="30" />
+        </property>
+        <property name="clientesTelefone" type="string">
+            <column name="Clientes_Telefone" length="48" />
+        </property>
+        <property name="clientesFax" type="string">
+            <column name="Clientes_Fax" length="48" />
+        </property>
+        <property name="detalhesPedidoNumeroDoPedido" type="java.lang.Integer">
+            <column name="Detalhes_Pedido_NumeroDoPedido" />
+        </property>
+        <property name="detalhesPedidoCodigoDoProduto" type="java.lang.Integer">
+            <column name="Detalhes_Pedido_CodigoDoProduto" />
+        </property>
+        <property name="detalhesPedidoPrecoUnitario" type="java.lang.Float">
+            <column name="Detalhes_Pedido_PrecoUnitario" precision="12" scale="0" />
+        </property>
+        <property name="quantidade" type="java.lang.Integer">
+            <column name="Quantidade" />
+        </property>
+        <property name="desconto" type="java.lang.Float">
+            <column name="Desconto" precision="12" scale="0" />
+        </property>
+        <property name="codigoDoFuncionario" type="java.lang.Integer">
+            <column name="CodigoDoFuncionario" />
+        </property>
+        <property name="sobrenome" type="string">
+            <column name="Sobrenome" length="40" />
+        </property>
+        <property name="nome" type="string">
+            <column name="Nome" length="20" />
+        </property>
+        <property name="cargo" type="string">
+            <column name="Cargo" length="60" />
+        </property>
+        <property name="tratamento" type="string">
+            <column name="Tratamento" length="50" />
+        </property>
+        <property name="dataDeNascimento" type="timestamp">
+            <column name="DataDeNascimento" length="19" />
+        </property>
+        <property name="dataDeContratacao" type="timestamp">
+            <column name="DataDeContratacao" length="19" />
+        </property>
+        <property name="empregadosEndereco" type="string">
+            <column name="Empregados_Endereco" length="120" />
+        </property>
+        <property name="empregadosCidade" type="string">
+            <column name="Empregados_Cidade" length="30" />
+        </property>
+        <property name="empregadosRegiao" type="string">
+            <column name="Empregados_Regiao" length="30" />
+        </property>
+        <property name="empregadosCep" type="string">
+            <column name="Empregados_CEP" length="20" />
+        </property>
+        <property name="empregadosPais" type="string">
+            <column name="Empregados_Pais" length="30" />
+        </property>
+        <property name="telefoneResidencial" type="string">
+            <column name="TelefoneResidencial" length="48" />
+        </property>
+        <property name="ramal" type="string">
+            <column name="Ramal" length="8" />
+        </property>
+        <property name="observacoes" type="string">
+            <column name="Observacoes" />
+        </property>
+        <property name="supervisor" type="java.lang.Integer">
+            <column name="Supervisor" />
+        </property>
+        <property name="fornecedoresCodigoDoFornecedor" type="java.lang.Integer">
+            <column name="Fornecedores_CodigoDoFornecedor" />
+        </property>
+        <property name="fornecedoresNomeDaEmpresa" type="string">
+            <column name="Fornecedores_NomeDaEmpresa" length="80" />
+        </property>
+        <property name="fornecedoresNomeDoContato" type="string">
+            <column name="Fornecedores_NomeDoContato" length="60" />
+        </property>
+        <property name="fornecedoresCargoDoContato" type="string">
+            <column name="Fornecedores_CargoDoContato" length="60" />
+        </property>
+        <property name="fornecedoresEndereco" type="string">
+            <column name="Fornecedores_Endereco" length="120" />
+        </property>
+        <property name="fornecedoresCidade" type="string">
+            <column name="Fornecedores_Cidade" length="30" />
+        </property>
+        <property name="fornecedoresRegiao" type="string">
+            <column name="Fornecedores_Regiao" length="30" />
+        </property>
+        <property name="fornecedoresCep" type="string">
+            <column name="Fornecedores_CEP" length="20" />
+        </property>
+        <property name="fornecedoresPais" type="string">
+            <column name="Fornecedores_Pais" length="30" />
+        </property>
+        <property name="fornecedoresTelefone" type="string">
+            <column name="Fornecedores_Telefone" length="48" />
+        </property>
+        <property name="fornecedoresFax" type="string">
+            <column name="Fornecedores_Fax" length="48" />
+        </property>
+        <property name="homePage" type="string">
+            <column name="HomePage" />
+        </property>
+        <property name="pedidosNumeroDoPedido" type="java.lang.Integer">
+            <column name="Pedidos_NumeroDoPedido" />
+        </property>
+        <property name="pedidosCodigoDoCliente" type="string">
+            <column name="Pedidos_CodigoDoCliente" length="10" />
+        </property>
+<!--        <property name="codigoDoFuncion&#195;&#161;rio" type="java.lang.Integer">
+            <column name="CodigoDoFuncion&#195;&#161;rio" />
+        </property>-->
+        <property name="dataDoPedido" type="timestamp">
+            <column name="DataDoPedido" length="19" />
+        </property>
+        <property name="dataDeEntrega" type="timestamp">
+            <column name="DataDeEntrega" length="19" />
+        </property>
+        <property name="dataDeEnvio" type="timestamp">
+            <column name="DataDeEnvio" length="19" />
+        </property>
+        <property name="via" type="java.lang.Integer">
+            <column name="Via" />
+        </property>
+        <property name="frete" type="java.lang.Float">
+            <column name="Frete" precision="12" scale="0" />
+        </property>
+        <property name="nomeDoDestinatario" type="string">
+            <column name="NomeDoDestinatario" length="80" />
+        </property>
+        <property name="enderecoDoDestinatario" type="string">
+            <column name="EnderecoDoDestinatario" length="120" />
+        </property>
+        <property name="cidadeDeDestino" type="string">
+            <column name="CidadeDeDestino" length="30" />
+        </property>
+        <property name="regiaoDeDestino" type="string">
+            <column name="RegiaoDeDestino" length="30" />
+        </property>
+        <property name="cepdeDestino" type="string">
+            <column name="CEPdeDestino" length="20" />
+        </property>
+        <property name="paisDeDestino" type="string">
+            <column name="PaisDeDestino" length="30" />
+        </property>
+        <property name="produtosCodigoDoProduto" type="java.lang.Integer">
+            <column name="Produtos_CodigoDoProduto" />
+        </property>
+        <property name="nomeDoProduto" type="string">
+            <column name="NomeDoProduto" length="80" />
+        </property>
+        <property name="produtosCodigoDoFornecedor" type="java.lang.Integer">
+            <column name="Produtos_CodigoDoFornecedor" />
+        </property>
+        <property name="produtosCodigoDaCategoria" type="java.lang.Integer">
+            <column name="Produtos_CodigoDaCategoria" />
+        </property>
+        <property name="quantidadePorUnidade" type="string">
+            <column name="QuantidadePorUnidade" length="50" />
+        </property>
+        <property name="produtosPrecoUnitario" type="java.lang.Float">
+            <column name="Produtos_PrecoUnitario" precision="12" scale="0" />
+        </property>
+        <property name="unidadesEmEstoque" type="java.lang.Integer">
+            <column name="UnidadesEmEstoque" />
+        </property>
+        <property name="unidadesPedidas" type="java.lang.Integer">
+            <column name="UnidadesPedidas" />
+        </property>
+        <property name="nivelDeReposicao" type="java.lang.Integer">
+            <column name="NivelDeReposicao" />
+        </property>
+        <property name="descontinuado" type="char">
+            <column name="Descontinuado" length="1" not-null="true" />
+        </property>
+        <property name="codigoDaTransportadora" type="java.lang.Integer">
+            <column name="CodigoDaTransportadora" />
+        </property>
+        <property name="transportadorasNomeDaEmpresa" type="string">
+            <column name="Transportadoras_NomeDaEmpresa" length="80" />
+        </property>
+        <property name="transportadorasTelefone" type="string">
+            <column name="Transportadoras_Telefone" length="48" />
+        </property>
+    </class>
+</hibernate-mapping>
