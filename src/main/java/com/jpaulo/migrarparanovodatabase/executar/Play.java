@@ -11,14 +11,15 @@ import org.hibernate.Session;
 
 /**
  *
- * @author minerthal
+ * @author jpaulo
  */
 public class Play {
+    
     public static void main(String[] args) {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
         List<Tabelao> list = session.createCriteria(Tabelao.class).list();
-        String me = "";
         session.close();
     }
+   
 }

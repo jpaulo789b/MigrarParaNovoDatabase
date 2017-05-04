@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="4.2.1" rws="_14939345607172" Pws="_14939345607172" cws="_14939345607172" sm="false" xs="false" id="_14939345607171" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" compositePrimaryKeyClass="CategoriaPK" abs="false" class="Categoria" v="true" m="false" rootElement="_14939345607171" id="_1493934585143">
+        <jpa:ts e="true"/>
+        <jpa:ath>aluno</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="nomeDaCategoria" id="_149393474769414">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" name="CodigoDaCategoria" id="_149393472398313">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Categoria.findAll">
+            <jpa:query>Select e from Categoria e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Categoria.findByNomeDaCategoria">
+            <jpa:query>Select c from Categoria c where c.nomeDaCategoria=:nomeDaCategoria</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ClientePK" abs="false" class="Cliente" v="true" m="false" rootElement="_14939345607171" id="_1493934611154">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>aluno</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="NomeDaEmpresa" id="_149393479738915">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="NomeDoContato" id="_149393480938916">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="CargoDoContato" id="_149393482278117">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Cidade" id="_149393487372518">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Regiao" id="_149393488969319">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Cep" id="_149393489638820">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Pais" id="_149393490279721">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Telefone" id="_149393490969322">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Fax" id="_149393491755623">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" name="CodigoDoCliente" id="_14939346111565">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Cliente.findAll">
+            <jpa:query>Select e from Cliente e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByNomeDaEmpresa">
+            <jpa:query>Select c from Cliente c where c.NomeDaEmpresa=:NomeDaEmpresa</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByNomeDoContato">
+            <jpa:query>Select c from Cliente c where c.NomeDoContato=:NomeDoContato</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByCargoDoContato">
+            <jpa:query>Select c from Cliente c where c.CargoDoContato=:CargoDoContato</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByCidade">
+            <jpa:query>Select c from Cliente c where c.Cidade=:Cidade</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByRegiao">
+            <jpa:query>Select c from Cliente c where c.Regiao=:Regiao</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByCep">
+            <jpa:query>Select c from Cliente c where c.Cep=:Cep</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByPais">
+            <jpa:query>Select c from Cliente c where c.Pais=:Pais</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByTelefone">
+            <jpa:query>Select c from Cliente c where c.Telefone=:Telefone</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Cliente.findByFax">
+            <jpa:query>Select c from Cliente c where c.Fax=:Fax</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="FornecedorPK" abs="false" class="Fornecedor" v="true" m="false" rootElement="_14939345607171" id="_1493934617580">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>aluno</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="NomeDaEmpresa" id="_149393501632426">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="NomeDoContato" id="_149393507223627">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="CargoDoContato" id="_149393508256428">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Endereco" id="_149393509785229">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Cidade" id="_149393510869230">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Regiao" id="_149393511475631">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Cep" id="_149393512102032">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Pais" id="_149393513085233">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Telefone" id="_149393513774034">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Fax" id="_149393514435635">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Integer" v="true" name="CodigoDoFornecedor" id="_14939346175857">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Fornecedor.findAll">
+            <jpa:query>Select e from Fornecedor e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Fornecedor.findByNomeDaEmpresa">
+            <jpa:query>Select f from Fornecedor f where f.NomeDaEmpresa=:NomeDaEmpresa</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Fornecedor.findByNomeDoContato">
+            <jpa:query>Select f from Fornecedor f where f.NomeDoContato=:NomeDoContato</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Fornecedor.findByCargoDoContato">
+            <jpa:query>Select f from Fornecedor f where f.CargoDoContato=:CargoDoContato</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Fornecedor.findByEndereco">
+            <jpa:query>Select f from Fornecedor f where f.Endereco=:Endereco</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Fornecedor.findByCidade">
+            <jpa:query>Select f from Fornecedor f where f.Cidade=:Cidade</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Fornecedor.findByRegiao">
+            <jpa:query>Select f from Fornecedor f where f.Regiao=:Regiao</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Fornecedor.findByCep">
+            <jpa:query>Select f from Fornecedor f where f.Cep=:Cep</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Fornecedor.findByPais">
+            <jpa:query>Select f from Fornecedor f where f.Pais=:Pais</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Fornecedor.findByTelefone">
+            <jpa:query>Select f from Fornecedor f where f.Telefone=:Telefone</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Fornecedor.findByFax">
+            <jpa:query>Select f from Fornecedor f where f.Fax=:Fax</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="TransportadoraPK" abs="false" class="Transportadora" v="true" m="false" rootElement="_14939345607171" id="_1493934626697">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>aluno</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="NomeDaEmpresa" id="_149393518571536">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="Telefone" id="_149393519950737">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" name="codigoDaTransportadora" id="_14939346267019">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Transportadora.findAll">
+            <jpa:query>Select e from Transportadora e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Transportadora.findByNomeDaEmpresa">
+            <jpa:query>Select t from Transportadora t where t.NomeDaEmpresa=:NomeDaEmpresa</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Transportadora.findByTelefone">
+            <jpa:query>Select t from Transportadora t where t.Telefone=:Telefone</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="PedidoPK" abs="false" class="Pedido" v="true" m="false" rootElement="_14939345607171" id="_1493934636753">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>aluno</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="java.util.Date" v="true" name="dataDoPedido" id="_149393536621939">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:temporal>DATE</jpa:temporal>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" name="via" id="_149393558398742">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:one-to-one own="true" orp="false" optional="false" primaryKey="false" connected-entity-id="_1493934611154" v="true" name="CodigoDoCliente" id="_149393533099138">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-one>
+            <jpa:id attribute-type="Long" v="true" name="NumeroDoPedido" id="_149393463675611">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Pedido.findAll">
+            <jpa:query>Select e from Pedido e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pedido.findByDataDoPedido">
+            <jpa:query>Select p from Pedido p where p.dataDoPedido=:dataDoPedido</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pedido.findByDataDeEntrega">
+            <jpa:query>Select p from Pedido p where p.dataDeEntrega=:dataDeEntrega</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pedido.findByDataDeEnvio">
+            <jpa:query>Select p from Pedido p where p.dataDeEnvio=:dataDeEnvio</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Pedido.findByVia">
+            <jpa:query>Select p from Pedido p where p.via=:via</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="DetalhePedidoPK" abs="false" class="DetalhePedido" v="true" m="false" rootElement="_14939345607171" id="_1493934993015">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>aluno</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-one own="true" orp="false" optional="true" primaryKey="false" connected-entity-id="_1493935825559" v="true" name="produtos" id="_149393632004455">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-one>
+            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1493934636753" v="true" name="pedido" id="_149393632436456">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-one>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_149393647449957">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="DetalhePedido.findAll">
+            <jpa:query>Select e from DetalhePedido e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DetalhePedido.findByAttribute">
+            <jpa:query>Select d from DetalhePedido d where d.attribute=:attribute</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="DetalhePedido.findByAttribute1">
+            <jpa:query>Select d from DetalhePedido d where d.attribute1=:attribute1</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ProdutosPK" abs="false" class="Produtos" v="true" m="false" rootElement="_14939345607171" id="_1493935825559">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>aluno</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" name="nomeDoProduto" id="_149393584437948">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="produtosCodigoDaCategoria" id="_149393586117150">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="Float" v="true" name="PrecoUnitario" id="_149393587061951">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" name="unidadesEmEstoque" id="_149393655552358">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" name="unidadesPedidas" id="_149393657101159">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="nivelDeReposicao" id="_149393658605160">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="char" v="true" name="descontinuado" id="_149393660483561">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" name="quantidadePorUnidade" id="_149393663730762">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:one-to-one own="true" orp="false" optional="true" primaryKey="false" connected-entity-id="_1493934617580" v="true" name="CodigoDoFornecedor" id="_149393624006854">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-one>
+            <jpa:one-to-one own="true" orp="false" optional="true" primaryKey="false" connected-entity-id="_1493934585143" v="true" name="CodigoDaCategoria" id="_149393667098863">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-one>
+            <jpa:id attribute-type="Long" v="true" name="CodigoDoProduto" id="_149393582556146">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Produtos.findAll">
+            <jpa:query>Select e from Produtos e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Produtos.findByNomeDoProduto">
+            <jpa:query>Select p from Produtos p where p.nomeDoProduto=:nomeDoProduto</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Produtos.findByProdutosCodigoDoFornecedor">
+            <jpa:query>Select p from Produtos p where p.produtosCodigoDoFornecedor=:produtosCodigoDoFornecedor</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Produtos.findByProdutosCodigoDaCategoria">
+            <jpa:query>Select p from Produtos p where p.produtosCodigoDaCategoria=:produtosCodigoDaCategoria</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Produtos.findByPrecoUnitario">
+            <jpa:query>Select p from Produtos p where p.PrecoUnitario=:PrecoUnitario</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Produtos.findByUnidadesEmEstoque">
+            <jpa:query>Select p from Produtos p where p.unidadesEmEstoque=:unidadesEmEstoque</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Produtos.findByUnidadesPedidas">
+            <jpa:query>Select p from Produtos p where p.unidadesPedidas=:unidadesPedidas</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Produtos.findByNivelDeReposicao">
+            <jpa:query>Select p from Produtos p where p.nivelDeReposicao=:nivelDeReposicao</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Produtos.findByDescontinuado">
+            <jpa:query>Select p from Produtos p where p.descontinuado=:descontinuado</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Produtos.findByQuantidadePorUnidade">
+            <jpa:query>Select p from Produtos p where p.quantidadePorUnidade=:quantidadePorUnidade</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="EntregaPK" abs="false" class="Entrega" v="true" m="false" rootElement="_14939345607171" id="_1493936778123">
+        <jpa:ts e="true"/>
+        <jpa:hc e="true"/>
+        <jpa:eq e="true"/>
+        <jpa:ath>aluno</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="float" v="true" name="frete" id="_149393682371466">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.Date" v="true" name="dataDeEntrega" id="_149393693771469">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:temporal>DATE</jpa:temporal>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.Date" v="true" name="dataDeEnvio" id="_149393694117070">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:temporal>DATE</jpa:temporal>
+            </jpa:basic>
+            <jpa:one-to-one own="true" orp="false" optional="true" primaryKey="false" connected-entity-id="_1493934636753" v="true" name="CodigoPedido" id="_149393690724768">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-one>
+            <jpa:id attribute-type="Long" v="true" name="CodigoEntrega" id="_149393677814464">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Entrega.findAll">
+            <jpa:query>Select e from Entrega e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Entrega.findByFrete">
+            <jpa:query>Select e from Entrega e where e.frete=:frete</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Entrega.findByDataDeEntrega">
+            <jpa:query>Select e from Entrega e where e.dataDeEntrega=:dataDeEntrega</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Entrega.findByDataDeEnvio">
+            <jpa:query>Select e from Entrega e where e.dataDeEnvio=:dataDeEnvio</jpa:query>
+        </jpa:nq>
+        <jpa:el/>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_14939345607172">
+            <i ref="_1493935825559" x="572" y="385">
+                <el/>
+            </i>
+            <i ref="_1493934617580" x="572" y="24">
+                <el/>
+            </i>
+            <i ref="_1493934636753" x="9" y="480">
+                <el/>
+            </i>
+            <i ref="_1493934993015" x="251" y="331">
+                <el/>
+            </i>
+            <i ref="_1493936778123" x="251" y="500">
+                <el/>
+            </i>
+            <i ref="_1493934626697" x="251" y="172">
+                <el/>
+            </i>
+            <i ref="_1493934611154" x="11" y="151">
+                <el/>
+            </i>
+            <i ref="_1493934585143" x="11" y="24">
+                <el/>
+            </i>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>
