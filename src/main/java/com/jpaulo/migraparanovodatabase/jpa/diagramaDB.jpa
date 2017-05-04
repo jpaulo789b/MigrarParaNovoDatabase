@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="4.2.1" rws="_14939345607172" Pws="_14939345607172" cws="_14939345607172" sm="false" xs="false" id="_14939345607171" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="com.jpaulo.migraparanovodatabase.entidades" v="4.2.1" rws="_14939345607172" Pws="_14939345607172" cws="_14939345607172" sm="false" xs="false" id="_14939345607171" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
     <jpa:entity xre="false" compositePrimaryKeyClass="CategoriaPK" abs="false" class="Categoria" v="true" m="false" rootElement="_14939345607171" id="_1493934585143">
         <jpa:ts e="true"/>
         <jpa:ath>aluno</jpa:ath>
@@ -13,7 +13,7 @@
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
-                <jpa:generated-value strategy="AUTO"/>
+                <jpa:generated-value/>
             </jpa:id>
         </jpa:attributes>
         <jpa:nq e="false" name="Categoria.findAll">
@@ -174,7 +174,7 @@
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
-                <jpa:generated-value strategy="AUTO"/>
+                <jpa:generated-value/>
             </jpa:id>
         </jpa:attributes>
         <jpa:nq e="false" name="Fornecedor.findAll">
@@ -272,7 +272,7 @@
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
-                <jpa:generated-value strategy="AUTO"/>
+                <jpa:generated-value/>
             </jpa:id>
         </jpa:attributes>
         <jpa:nq e="false" name="Pedido.findAll">
@@ -386,7 +386,7 @@
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
-                <jpa:generated-value strategy="AUTO"/>
+                <jpa:generated-value/>
             </jpa:id>
         </jpa:attributes>
         <jpa:nq e="false" name="Produtos.findAll">
@@ -449,11 +449,16 @@
                 <jpa:kbv/>
                 <jpa:vbv/>
             </jpa:one-to-one>
+            <jpa:one-to-one own="true" primaryKey="false" connected-entity-id="_1493934626697" v="true" name="transportadora" id="_149393878484271">
+                <jpa:bv/>
+                <jpa:kbv/>
+                <jpa:vbv/>
+            </jpa:one-to-one>
             <jpa:id attribute-type="Long" v="true" name="CodigoEntrega" id="_149393677814464">
                 <jpa:bv/>
                 <jpa:kbv/>
                 <jpa:vbv/>
-                <jpa:generated-value strategy="AUTO"/>
+                <jpa:generated-value/>
             </jpa:id>
         </jpa:attributes>
         <jpa:nq e="false" name="Entrega.findAll">
