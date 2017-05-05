@@ -8,7 +8,18 @@
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/taco</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">123456</property>
+    <property name="show_sql">true</property>
+    <property name="hbm2ddl.auto">update</property>
     <property name="hibernate.current_session_context_class">thread</property>
+    <mapping class="com.jpaulo.migraparanovodatabase.entidades.Transportadora"/>
+    <mapping class="com.jpaulo.migraparanovodatabase.entidades.Cliente"/>
+    <mapping class="com.jpaulo.migraparanovodatabase.entidades.DetalhePedido"/>
+    <mapping class="com.jpaulo.migraparanovodatabase.entidades.Entrega"/>
+    <mapping class="com.jpaulo.migraparanovodatabase.entidades.Fornecedor"/>
+    <mapping class="com.jpaulo.migraparanovodatabase.entidades.Pedido"/>
+    <mapping class="com.jpaulo.migraparanovodatabase.entidades.Produto"/>
+    <mapping class="com.jpaulo.migraparanovodatabase.entidades.Categoria"/>
+    
     <mapping resource="com/jpaulo/migraparanovodatabase/entidades/Tabelao.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

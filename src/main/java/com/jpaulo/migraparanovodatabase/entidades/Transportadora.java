@@ -16,7 +16,6 @@ import javax.persistence.Id;
 public class Transportadora {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer codigoDaTransportadora;
 
     @Basic

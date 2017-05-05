@@ -6,6 +6,8 @@ package com.jpaulo.migraparanovodatabase.entidades;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -18,6 +20,7 @@ import javax.persistence.TemporalType;
 public class Entrega {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer CodigoEntrega;
 
     @Basic

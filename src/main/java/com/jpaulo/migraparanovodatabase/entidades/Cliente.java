@@ -16,8 +16,7 @@ import javax.persistence.Id;
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer CodigoDoCliente;
+    private String CodigoDoCliente;
 
     @Basic
     private String NomeDaEmpresa;
@@ -46,11 +45,11 @@ public class Cliente {
     @Basic
     private String Fax;
 
-    public Integer getCodigoDoCliente() {
+    public String getCodigoDoCliente() {
         return this.CodigoDoCliente;
     }
 
-    public void setCodigoDoCliente(Integer CodigoDoCliente) {
+    public void setCodigoDoCliente(String CodigoDoCliente) {
         this.CodigoDoCliente = CodigoDoCliente;
     }
 

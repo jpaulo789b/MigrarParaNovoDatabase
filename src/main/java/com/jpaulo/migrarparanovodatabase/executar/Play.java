@@ -56,23 +56,66 @@ public class Play {
             cliente.setNomeDaEmpresa(t.getClientesNomeDaEmpresa());
             cliente.setNomeDoContato(t.getClientesNomeDoContato());
             clientes.add(cliente);
-            
-            //
-            DetalhePedido detalhePedido = new DetalhePedido();
-            detalhePedidos.add(detalhePedido);
-            //
-            Entrega entrega = new Entrega();
-            entregas.add(entrega);
-            //
-            Pedido pedido = new Pedido();
-            pedidos.add(pedido);
-            //
-            Transportadora transportadora = new Transportadora();
-            transportadoras.add(transportadora);
             // 
             Fornecedor fornecedor = new Fornecedor();
+            fornecedor.setCodigoDoFornecedor(t.getFornecedoresCodigoDoFornecedor());
+            fornecedor.setCargoDoContato(t.getFornecedoresCargoDoContato());
+            fornecedor.setPais(t.getFornecedoresPais());
+            fornecedor.setCidade(t.getFornecedoresCidade());
+            fornecedor.setCep(t.getFornecedoresCep());
+            fornecedor.setEndereco(t.getFornecedoresEndereco());
+            fornecedor.setTelefone(t.getFornecedoresTelefone());
+            fornecedor.setRegiao(t.getFornecedoresRegiao());
+            fornecedor.setNomeDaEmpresa(t.getFornecedoresNomeDaEmpresa());
             fornecedores.add(fornecedor);
-            //////////////////////////////////////////////////////
+            // 
+            Produto produto = new Produto();
+            produto.setCodigoDoProduto(t.getProdutosCodigoDoProduto());
+            produto.setCodigoDaCategoria(categoria);
+            produto.setCodigoDoFornecedor(fornecedor);
+            produto.setDescontinuado(t.getDescontinuado());
+            produto.setNivelDeReposicao(t.getNivelDeReposicao());
+            produto.setNomeDoProduto(t.getNomeDoProduto());
+            produto.setPrecoUnitario(t.getProdutosPrecoUnitario());
+            produto.setQuantidadePorUnidade(t.getQuantidadePorUnidade());
+            produto.setUnidadesEmEstoque(t.getUnidadesEmEstoque());
+            produto.setUnidadesPedidas(t.getUnidadesPedidas());
+            //
+            Pedido pedido = new Pedido();
+            pedido.setCodigoDoCliente(cliente);
+            pedido.setDataDoPedido(t.getDataDoPedido());
+            pedido.setNumeroDoPedido(t.getPedidosNumeroDoPedido());
+            pedido.setVia(t.getVia());
+            pedidos.add(pedido);
+            //
+            DetalhePedido detalhePedido = new DetalhePedido();
+            
+            detalhePedido.setPedido(pedido);
+            detalhePedido.setProduto(produto);
+            detalhePedidos.add(detalhePedido);
+            detalhePedido.setPrecoUnitario(t.getDetalhesPedidoPrecoUnitario());
+            //
+            Entrega entrega = new Entrega();
+            entrega.setCodigoPedido(pedido);
+            entrega.setDataDeEntrega(t.getDataDeEntrega());
+            entrega.setDataDeEnvio(t.getDataDeEnvio());
+            entregas.add(entrega);
+            //
+            Transportadora transportadora = new Transportadora();
+            transportadora.setCodigoDaTransportadora(t.getCodigoDaTransportadora());
+            transportadora.setNomeDaEmpresa(t.getTransportadorasNomeDaEmpresa());
+            transportadora.setTelefone(t.getTransportadorasTelefone());
+            transportadoras.add(transportadora);
+            //
+            session.persist(transportadora);
+            session.persist(categoria);
+            session.persist(cliente);
+            session.persist(fornecedor);
+            session.persist(produto);
+            session.persist(pedido);
+            session.persist(produto);
+            session.persist(detalhePedido);
+            session.beginTransaction().commit();
             
         }
         session.close();

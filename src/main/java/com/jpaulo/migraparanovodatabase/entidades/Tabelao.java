@@ -14,7 +14,7 @@ public class Tabelao  implements java.io.Serializable {
      private Integer categoriasCodigoDaCategoria;
      private String nomeDaCategoria;
      private String descricao;
-     private Integer clientesCodigoDoCliente;
+     private String clientesCodigoDoCliente;
      private String clientesNomeDaEmpresa;
      private String clientesNomeDoContato;
      private String clientesCargoDoContato;
@@ -93,7 +93,7 @@ public class Tabelao  implements java.io.Serializable {
     public Tabelao(char descontinuado) {
         this.descontinuado = descontinuado;
     }
-    public Tabelao(Integer categoriasCodigoDaCategoria, String nomeDaCategoria, String descricao, Integer clientesCodigoDoCliente, String clientesNomeDaEmpresa, String clientesNomeDoContato, String clientesCargoDoContato, String clientesEndereco, String clientesCidade, String clientesRegiao, String clientesCep, String clientesPais, String clientesTelefone, String clientesFax, Integer detalhesPedidoNumeroDoPedido, Integer detalhesPedidoCodigoDoProduto, Float detalhesPedidoPrecoUnitario, Integer quantidade, Float desconto, Integer codigoDoFuncionario, String sobrenome, String nome, String cargo, String tratamento, Date dataDeNascimento, Date dataDeContratacao, String empregadosEndereco, String empregadosCidade, String empregadosRegiao, String empregadosCep, String empregadosPais, String telefoneResidencial, String ramal, String observacoes, Integer supervisor, Integer fornecedoresCodigoDoFornecedor, String fornecedoresNomeDaEmpresa, String fornecedoresNomeDoContato, String fornecedoresCargoDoContato, String fornecedoresEndereco, String fornecedoresCidade, String fornecedoresRegiao, String fornecedoresCep, String fornecedoresPais, String fornecedoresTelefone, String fornecedoresFax, String homePage, Integer pedidosNumeroDoPedido, String pedidosCodigoDoCliente, Integer codigoDoFuncionário, Date dataDoPedido, Date dataDeEntrega, Date dataDeEnvio, Integer via, Float frete, String nomeDoDestinatario, String enderecoDoDestinatario, String cidadeDeDestino, String regiaoDeDestino, String cepdeDestino, String paisDeDestino, Integer produtosCodigoDoProduto, String nomeDoProduto, Integer produtosCodigoDoFornecedor, Integer produtosCodigoDaCategoria, String quantidadePorUnidade, Float produtosPrecoUnitario, Integer unidadesEmEstoque, Integer unidadesPedidas, Integer nivelDeReposicao, char descontinuado, Integer codigoDaTransportadora, String transportadorasNomeDaEmpresa, String transportadorasTelefone) {
+    public Tabelao(Integer categoriasCodigoDaCategoria, String nomeDaCategoria, String descricao, String clientesCodigoDoCliente, String clientesNomeDaEmpresa, String clientesNomeDoContato, String clientesCargoDoContato, String clientesEndereco, String clientesCidade, String clientesRegiao, String clientesCep, String clientesPais, String clientesTelefone, String clientesFax, Integer detalhesPedidoNumeroDoPedido, Integer detalhesPedidoCodigoDoProduto, Float detalhesPedidoPrecoUnitario, Integer quantidade, Float desconto, Integer codigoDoFuncionario, String sobrenome, String nome, String cargo, String tratamento, Date dataDeNascimento, Date dataDeContratacao, String empregadosEndereco, String empregadosCidade, String empregadosRegiao, String empregadosCep, String empregadosPais, String telefoneResidencial, String ramal, String observacoes, Integer supervisor, Integer fornecedoresCodigoDoFornecedor, String fornecedoresNomeDaEmpresa, String fornecedoresNomeDoContato, String fornecedoresCargoDoContato, String fornecedoresEndereco, String fornecedoresCidade, String fornecedoresRegiao, String fornecedoresCep, String fornecedoresPais, String fornecedoresTelefone, String fornecedoresFax, String homePage, Integer pedidosNumeroDoPedido, String pedidosCodigoDoCliente, Integer codigoDoFuncionário, Date dataDoPedido, Date dataDeEntrega, Date dataDeEnvio, Integer via, Float frete, String nomeDoDestinatario, String enderecoDoDestinatario, String cidadeDeDestino, String regiaoDeDestino, String cepdeDestino, String paisDeDestino, Integer produtosCodigoDoProduto, String nomeDoProduto, Integer produtosCodigoDoFornecedor, Integer produtosCodigoDaCategoria, String quantidadePorUnidade, Float produtosPrecoUnitario, Integer unidadesEmEstoque, Integer unidadesPedidas, Integer nivelDeReposicao, char descontinuado, Integer codigoDaTransportadora, String transportadorasNomeDaEmpresa, String transportadorasTelefone) {
        this.categoriasCodigoDaCategoria = categoriasCodigoDaCategoria;
        this.nomeDaCategoria = nomeDaCategoria;
        this.descricao = descricao;
@@ -198,11 +198,11 @@ public class Tabelao  implements java.io.Serializable {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public Integer getClientesCodigoDoCliente() {
+    public String getClientesCodigoDoCliente() {
         return this.clientesCodigoDoCliente;
     }
     
-    public void setClientesCodigoDoCliente(Integer clientesCodigoDoCliente) {
+    public void setClientesCodigoDoCliente(String clientesCodigoDoCliente) {
         this.clientesCodigoDoCliente = clientesCodigoDoCliente;
     }
     public String getClientesNomeDaEmpresa() {

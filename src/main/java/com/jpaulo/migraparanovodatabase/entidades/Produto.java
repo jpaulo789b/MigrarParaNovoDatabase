@@ -33,7 +33,7 @@ public class Produto {
     private int unidadesPedidas;
 
     @Basic
-    private String nivelDeReposicao;
+    private Integer nivelDeReposicao;
 
     @Basic
     private char descontinuado;
@@ -95,11 +95,11 @@ public class Produto {
         this.unidadesPedidas = unidadesPedidas;
     }
 
-    public String getNivelDeReposicao() {
+    public Integer getNivelDeReposicao() {
         return this.nivelDeReposicao;
     }
 
-    public void setNivelDeReposicao(String nivelDeReposicao) {
+    public void setNivelDeReposicao(Integer nivelDeReposicao) {
         this.nivelDeReposicao = nivelDeReposicao;
     }
 

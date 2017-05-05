@@ -3,10 +3,12 @@
  */
 package com.jpaulo.migraparanovodatabase.entidades;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 /**
@@ -20,10 +22,14 @@ public class DetalhePedido {
     private Integer id;
 
     @OneToOne(targetEntity = Produto.class)
-    private Produto produtos;
+    private Produto produto;
 
     @OneToOne(targetEntity = Pedido.class)
+    @JoinColumn(name = "NumeroDoPedido")
     private Pedido pedido;
+    
+    @Basic
+    private Float precoUnitario;
 
     public Integer getId() {
         return this.id;
@@ -33,12 +39,12 @@ public class DetalhePedido {
         this.id = id;
     }
 
-    public Produto getProdutos() {
-        return this.produtos;
+    public Produto getProduto() {
+        return this.produto;
     }
 
-    public void setProdutos(Produto produtos) {
-        this.produtos = produtos;
+    public void setProduto(Produto produtos) {
+        this.produto = produtos;
     }
 
     public Pedido getPedido() {
@@ -48,5 +54,14 @@ public class DetalhePedido {
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
     }
+
+    public Float getPrecoUnitario() {
+        return precoUnitario;
+    }
+
+    public void setPrecoUnitario(Float precoUnitario) {
+        this.precoUnitario = precoUnitario;
+    }
+    
 
 }
