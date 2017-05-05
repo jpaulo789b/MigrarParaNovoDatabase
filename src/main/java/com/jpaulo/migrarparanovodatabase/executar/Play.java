@@ -23,22 +23,37 @@ import org.hibernate.Session;
  * @author jpaulo
  */
 public class Play {
-    
+
     public static void main(String[] args) {
-         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
         List<Tabelao> tabelaoGeral = session.createCriteria(Tabelao.class).list();
-        
+
         List<Categoria> categorias = new ArrayList<>();
+        List<Categoria> categoriasB = new ArrayList<>();
+
         List<Cliente> clientes = new ArrayList<>();
+        List<Cliente> clientesB = new ArrayList<>();
+
         List<DetalhePedido> detalhePedidos = new ArrayList<>();
+        List<DetalhePedido> detalhePedidosB = new ArrayList<>();
+
         List<Entrega> entregas = new ArrayList<>();
+        List<Entrega> entregasB = new ArrayList<>();
+
         List<Fornecedor> fornecedores = new ArrayList<>();
+        List<Fornecedor> fornecedoresB = new ArrayList<>();
+
         List<Pedido> pedidos = new ArrayList<>();
+        List<Pedido> pedidosB = new ArrayList<>();
+
         List<Produto> produtos = new ArrayList<>();
+        List<Produto> produtosB = new ArrayList<>();
+
         List<Transportadora> transportadoras = new ArrayList<>();
-        
-        for(Tabelao t:tabelaoGeral){
+        List<Transportadora> transportadorasB = new ArrayList<>();
+
+        for (Tabelao t : tabelaoGeral) {
             // Objetos 
             Categoria categoria = new Categoria();
             categoria.setCodigoDaCategoria(t.getCategoriasCodigoDaCategoria());
@@ -80,6 +95,7 @@ public class Play {
             produto.setQuantidadePorUnidade(t.getQuantidadePorUnidade());
             produto.setUnidadesEmEstoque(t.getUnidadesEmEstoque());
             produto.setUnidadesPedidas(t.getUnidadesPedidas());
+            produtos.add(produto);
             //
             Pedido pedido = new Pedido();
             pedido.setCodigoDoCliente(cliente);
@@ -89,7 +105,7 @@ public class Play {
             pedidos.add(pedido);
             //
             DetalhePedido detalhePedido = new DetalhePedido();
-            
+
             detalhePedido.setPedido(pedido);
             detalhePedido.setProduto(produto);
             detalhePedidos.add(detalhePedido);
@@ -106,19 +122,99 @@ public class Play {
             transportadora.setNomeDaEmpresa(t.getTransportadorasNomeDaEmpresa());
             transportadora.setTelefone(t.getTransportadorasTelefone());
             transportadoras.add(transportadora);
-            //
-            session.persist(transportadora);
-            session.persist(categoria);
-            session.persist(cliente);
-            session.persist(fornecedor);
-            session.persist(produto);
-            session.persist(pedido);
-            session.persist(produto);
-            session.persist(detalhePedido);
-            session.beginTransaction().commit();
-            
+
         }
+//        categorias; 1º
+        for (Categoria obj : categorias) {
+            if (!categoriasB.contains(obj)) {
+                categoriasB.add(obj);
+                session.persist(obj);
+            }
+        }
+        int i = 0;
+//        clientes; 2º
+        for (Cliente obj : clientes) {
+            if (!clientesB.contains(obj)) {
+                clientesB.add(obj);
+                session.persist(obj);
+            }
+        }
+        i = 0;
+//        fornecedores; 3º
+        for (Fornecedor obj : fornecedores) {
+            if (!fornecedoresB.contains(obj)) {
+                fornecedoresB.add(obj);
+                session.persist(obj);
+            }
+        }
+        i = 0;
+//        transportadoras; 4º
+        for (Transportadora obj : transportadoras) {
+            if (!transportadorasB.contains(obj)) {
+                transportadorasB.add(obj);
+                session.persist(obj);
+            }
+        }
+        i = 0;
+//        produtos; 5º
+        for (Produto obj : produtos) {
+            if (!produtosB.contains(obj)) {
+                // Subistitue categoria por categoria B
+                for(Categoria c: categoriasB){
+                    if(c.equals(obj.getCodigoDaCategoria())){
+                        obj.setCodigoDaCategoria(c);
+                    }
+                }
+                // Subistitue Fornecedor por fornecedor B
+                for(Fornecedor f: fornecedoresB){
+                    if(f.equals(obj.getCodigoDoFornecedor())) obj.setCodigoDoFornecedor(f);
+                }
+                produtosB.add(obj);
+                session.persist(obj);
+            }
+        }
+        i = 0;
+//        pedidos; 6º
+        for (Pedido obj : pedidos) {
+            if (!pedidosB.contains(obj)) {
+                for(Cliente c: clientesB){
+                    if(c.equals(obj.getCodigoDoCliente())) obj.setCodigoDoCliente(c);
+                }
+                pedidosB.add(obj);
+                session.persist(obj);
+            }
+        }
+        i = 0;
+//        detalhePedidos; 7º
+        for (DetalhePedido obj : detalhePedidos) {
+            if (!detalhePedidosB.contains(obj)) {
+                // Substitue o produto por o mesmo produto B.
+                for(Produto p: produtosB){
+                    if(p.equals(obj.getProduto())){
+                        obj.setProduto(p);
+                    }
+                };
+                // Substitue o pedido por o mesmo pedido B.
+                for(Pedido p: pedidosB){
+                    if(p.equals(obj.getPedido())){
+                        obj.setPedido(p);
+                    }
+                };
+                detalhePedidosB.add(obj);
+                session.persist(obj);
+            }
+        }
+        i = 0;
+//        entregas; 8º
+        for (Entrega obj : entregas) {
+            if (!entregasB.contains(obj)) {
+                entregasB.add(obj);
+                session.persist(obj);
+            }
+        }
+
+        session.beginTransaction().commit();
         session.close();
     }
-   
+
 }

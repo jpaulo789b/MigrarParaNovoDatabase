@@ -3,6 +3,7 @@
  */
 package com.jpaulo.migraparanovodatabase.entidades;
 
+import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -133,5 +134,72 @@ public class Fornecedor {
     public void setFax(String Fax) {
         this.Fax = Fax;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 53 * hash + Objects.hashCode(this.CodigoDoFornecedor);
+        hash = 53 * hash + Objects.hashCode(this.NomeDaEmpresa);
+        hash = 53 * hash + Objects.hashCode(this.NomeDoContato);
+        hash = 53 * hash + Objects.hashCode(this.CargoDoContato);
+        hash = 53 * hash + Objects.hashCode(this.Endereco);
+        hash = 53 * hash + Objects.hashCode(this.Cidade);
+        hash = 53 * hash + Objects.hashCode(this.Regiao);
+        hash = 53 * hash + Objects.hashCode(this.Cep);
+        hash = 53 * hash + Objects.hashCode(this.Pais);
+        hash = 53 * hash + Objects.hashCode(this.Telefone);
+        hash = 53 * hash + Objects.hashCode(this.Fax);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Fornecedor other = (Fornecedor) obj;
+        if (!Objects.equals(this.NomeDaEmpresa, other.NomeDaEmpresa)) {
+            return false;
+        }
+        if (!Objects.equals(this.NomeDoContato, other.NomeDoContato)) {
+            return false;
+        }
+        if (!Objects.equals(this.CargoDoContato, other.CargoDoContato)) {
+            return false;
+        }
+        if (!Objects.equals(this.Endereco, other.Endereco)) {
+            return false;
+        }
+        if (!Objects.equals(this.Cidade, other.Cidade)) {
+            return false;
+        }
+        if (!Objects.equals(this.Regiao, other.Regiao)) {
+            return false;
+        }
+        if (!Objects.equals(this.Cep, other.Cep)) {
+            return false;
+        }
+        if (!Objects.equals(this.Pais, other.Pais)) {
+            return false;
+        }
+        if (!Objects.equals(this.Telefone, other.Telefone)) {
+            return false;
+        }
+        if (!Objects.equals(this.Fax, other.Fax)) {
+            return false;
+        }
+        if (!Objects.equals(this.CodigoDoFornecedor, other.CodigoDoFornecedor)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 
 }

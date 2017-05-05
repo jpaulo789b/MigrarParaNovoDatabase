@@ -3,6 +3,7 @@
  */
 package com.jpaulo.migraparanovodatabase.entidades;
 
+import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +23,7 @@ public class DetalhePedido {
     private Integer id;
 
     @OneToOne(targetEntity = Produto.class)
+    @JoinColumn(name = "CodigoDoProduto")
     private Produto produto;
 
     @OneToOne(targetEntity = Pedido.class)
@@ -61,6 +63,43 @@ public class DetalhePedido {
 
     public void setPrecoUnitario(Float precoUnitario) {
         this.precoUnitario = precoUnitario;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.id);
+        hash = 59 * hash + Objects.hashCode(this.produto);
+        hash = 59 * hash + Objects.hashCode(this.pedido);
+        hash = 59 * hash + Objects.hashCode(this.precoUnitario);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final DetalhePedido other = (DetalhePedido) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.produto, other.produto)) {
+            return false;
+        }
+        if (!Objects.equals(this.pedido, other.pedido)) {
+            return false;
+        }
+        if (!Objects.equals(this.precoUnitario, other.precoUnitario)) {
+            return false;
+        }
+        return true;
     }
     
 

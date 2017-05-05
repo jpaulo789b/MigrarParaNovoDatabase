@@ -4,6 +4,7 @@
 package com.jpaulo.migraparanovodatabase.entidades;
 
 import java.util.Date;
+import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -88,4 +89,49 @@ public class Entrega {
         this.transportadora = transportadora;
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.CodigoEntrega);
+        hash = 59 * hash + Float.floatToIntBits(this.frete);
+        hash = 59 * hash + Objects.hashCode(this.dataDeEntrega);
+        hash = 59 * hash + Objects.hashCode(this.dataDeEnvio);
+        hash = 59 * hash + Objects.hashCode(this.CodigoPedido);
+        hash = 59 * hash + Objects.hashCode(this.transportadora);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Entrega other = (Entrega) obj;
+        if (Float.floatToIntBits(this.frete) != Float.floatToIntBits(other.frete)) {
+            return false;
+        }
+        if (!Objects.equals(this.CodigoEntrega, other.CodigoEntrega)) {
+            return false;
+        }
+        if (!Objects.equals(this.dataDeEntrega, other.dataDeEntrega)) {
+            return false;
+        }
+        if (!Objects.equals(this.dataDeEnvio, other.dataDeEnvio)) {
+            return false;
+        }
+        if (!Objects.equals(this.CodigoPedido, other.CodigoPedido)) {
+            return false;
+        }
+        if (!Objects.equals(this.transportadora, other.transportadora)) {
+            return false;
+        }
+        return true;
+    }
+    
 }

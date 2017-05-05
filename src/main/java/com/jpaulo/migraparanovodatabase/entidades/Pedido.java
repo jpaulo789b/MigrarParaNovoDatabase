@@ -4,9 +4,11 @@
 package com.jpaulo.migraparanovodatabase.entidades;
 
 import java.util.Date;
+import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,6 +30,7 @@ public class Pedido {
     private int via;
 
     @OneToOne(optional = false, targetEntity = Cliente.class)
+    @JoinColumn(name = "CodigoDoCliente")
     private Cliente CodigoDoCliente;
 
     public Integer getNumeroDoPedido() {
@@ -61,5 +64,43 @@ public class Pedido {
     public void setCodigoDoCliente(Cliente CodigoDoCliente) {
         this.CodigoDoCliente = CodigoDoCliente;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.NumeroDoPedido);
+        hash = 79 * hash + Objects.hashCode(this.dataDoPedido);
+        hash = 79 * hash + this.via;
+        hash = 79 * hash + Objects.hashCode(this.CodigoDoCliente);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pedido other = (Pedido) obj;
+        if (this.via != other.via) {
+            return false;
+        }
+        if (!Objects.equals(this.NumeroDoPedido, other.NumeroDoPedido)) {
+            return false;
+        }
+        if (!Objects.equals(this.dataDoPedido, other.dataDoPedido)) {
+            return false;
+        }
+        if (!Objects.equals(this.CodigoDoCliente, other.CodigoDoCliente)) {
+            return false;
+        }
+        return true;
+    }
+    
 
 }

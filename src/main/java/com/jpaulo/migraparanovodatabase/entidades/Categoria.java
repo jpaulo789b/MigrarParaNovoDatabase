@@ -3,6 +3,7 @@
  */
 package com.jpaulo.migraparanovodatabase.entidades;
 
+import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -34,5 +35,35 @@ public class Categoria {
     public void setNomeDaCategoria(String nomeDaCategoria) {
         this.nomeDaCategoria = nomeDaCategoria;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.CodigoDaCategoria);
+        hash = 79 * hash + Objects.hashCode(this.nomeDaCategoria);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Categoria other = (Categoria) obj;
+        if (!Objects.equals(this.nomeDaCategoria, other.nomeDaCategoria)) {
+            return false;
+        }
+        if (!Objects.equals(this.CodigoDaCategoria, other.CodigoDaCategoria)) {
+            return false;
+        }
+        return true;
+    }
+    
 
 }
