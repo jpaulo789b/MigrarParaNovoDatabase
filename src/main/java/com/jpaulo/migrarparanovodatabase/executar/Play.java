@@ -24,11 +24,16 @@ import org.hibernate.Session;
  */
 public class Play {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
         List<Tabelao> tabelaoGeral = session.createCriteria(Tabelao.class).list();
-
+        
+        for(Tabelao t: importarCSV.linhas()){
+        	session.persist(t);
+        }
+        session.beginTransaction().commit();
+        
         List<Categoria> categorias = new ArrayList<>();
         List<Categoria> categoriasB = new ArrayList<>();
 
